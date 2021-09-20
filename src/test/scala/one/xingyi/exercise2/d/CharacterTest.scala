@@ -9,16 +9,12 @@ class CharacterTest extends  AnyFlatSpec with should.Matchers{
   behavior of "Character"
 
   it should "take damage" in {
-    Character.doDamage(Attack(Character(), 25)) shouldBe Character(75, true)
-    Character.doDamage(Attack(Character(), 100)) shouldBe Character(0, false)
-    Character.doDamage(Attack(Character(), 150)) shouldBe Character(0, false)
-    Character.doDamage(Attack(Character(25), 25)) shouldBe Character(0, false)
-    Character.doDamage(Attack(Character(25), 24)) shouldBe Character(1, true)
+    Character.doDamage(Attack(Character(), 250)) shouldBe Character(750, true)
+    Character.doDamage(Attack(Character(), 1000)) shouldBe Character(0, false)
+    Character.doDamage(Attack(Character(), 1500)) shouldBe Character(0, false)
+    Character.doDamage(Attack(Character(250), 250)) shouldBe Character(0, false)
+    Character.doDamage(Attack(Character(250), 240)) shouldBe Character(10, true)
+    Character.doDamage(Attack(Character(0, false), 1)) shouldBe Character(0, false)
   }
-//  it should "take damage" in {
-//     Character.attack(Character(1000, true), 100) shouldBe Character(900, true)
-//     Character.attack(Character(1000, true), 1001) shouldBe Character(0, false)
-//     Character.attack(Character(1000, true), 1000) shouldBe Character(0, true)
-//  }
 
 }
